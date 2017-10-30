@@ -1,0 +1,29 @@
+	<%= flash[:notice] if flash[:notice] %>
+	<table class="table" border="1">
+		<tr>
+			<th>ID</th>
+			<th>Typ</th>
+			<th>Model</th>
+			<th>Opis</th>
+			<th>Cena</th>
+			<th>Zdjęcie</th>
+			<th>Elementy</th>
+		</tr>
+		<% @products.each do |product| %>
+		<tr>
+			<td><%= product.id %></td>
+			<td><%= product.category.name %></td>
+			<td><%= product.model %></td>
+			<td><%= product.description %></td>
+			<td><%= product.price %></td>
+			<td><%= image_tag product.picture %></td>
+			<td><%= link_to 'Pokaż', product_elements_path(product) %></td>
+		</tr>
+		<% end %>
+	</table>
+	</br>
+	<%= link_to 'Nowy produkt', new_product_path%>
+	<br />
+	<%= link_to "Cofnij", root_path %>
+
+

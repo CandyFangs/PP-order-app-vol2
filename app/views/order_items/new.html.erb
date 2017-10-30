@@ -1,0 +1,16 @@
+<%= form_for([@order, @order_item], html: {class: "form-vertical"}) do |f| %>
+<% @elements.each_with_index do |e, i| %>
+	<div class="form-group">
+		<%= f.label :name, "#{e.name}", class: "control-label" %>
+		</br>
+			<% e.material.colors.each do |color| %>
+				<%= radio_button_tag("material_#{i}[#{e.id}]", "#{color.id}") %>
+				<%= label_tag("material_#{i}[#{e.name}]", "#{color.color}") %>
+				<br/>
+			<% end %>
+		</div>
+	<% end %>
+	<%= hidden_field_tag :material_count, @elements.count-1 %>
+	<%= f.submit "Zapisz" %>
+<% end %>
+	

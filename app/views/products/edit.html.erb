@@ -1,0 +1,5 @@
+<%= flash[:error] if flash[:error] %>
+<%= render partial: 'form', locals: { product: @product } %>
+<h3>Edytuj produkt</h3>
+</br>
+<%= link_to "Cofnij", products_path %>

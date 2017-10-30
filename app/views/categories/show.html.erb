@@ -1,0 +1,5 @@
+<% @things.each do |thing| %>
+  <%= link_to new_order_path(product_id: thing.id) do %>
+  	<%= image_tag thing.picture %>
+  <% end %>
+<% end %>

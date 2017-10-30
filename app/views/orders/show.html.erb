@@ -1,0 +1,21 @@
+Twój wybór:
+</br>
+<% @order.order_items.each do |item| %>
+	<%= "#{item.element.name}: #{item.color.color}" %>
+	</br>
+<% end %>
+</br>
+Termin realizacji wynosi w okolicach miesiąca. Po potwierdzeniu zamówienia skontaktuję się z Tobą w ciągu 24h w celu ustalenia szczegółów odbioru i płatności.
+</br>
+Podaj adres email i potwierdź zamówienie.
+</br>
+<%= form_for(@order, html: {class: "form-vertical"}) do |f| %>
+	<div class="form-group">
+		<%= f.label :user, "Adres email", class: "control-label" %>
+		<%= f.email_field :user, class: "form-control col-sm-4" %>
+	</div>
+	<%= f.submit "Zapisz" %>
+	</br> 
+	<% end %>
+</br>
+

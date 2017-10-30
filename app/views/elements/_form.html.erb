@@ -1,0 +1,12 @@
+<%= form_for([@product, @element], html: {class: "form-horizontal"}) do |f| %>
+	<div class="form-group">
+		<%= f.label :name, "Nazwa", class: "control-label"  %>
+		<%= f.text_field :name, class: "form-control col-sm-4" %>
+	</div>
+	<div class="form-group">
+		<%= f.label :material_id, "Nazwa", class: "control-label"  %>
+		<%= f.collection_select(:material_id, Material.all, :id, :brand, class: "form-control col-sm-4") %>
+	</div>
+<br />
+<%= f.submit "Zapisz" %>
+<% end %>

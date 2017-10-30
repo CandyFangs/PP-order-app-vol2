@@ -1,0 +1,19 @@
+<%= flash[:notice] if flash[:notice] %>
+<br />
+<table class="table" border="1">
+<h3>Przypisane elementy</h3>
+<h4><%= @product.model %></h4>
+	<tr>
+		<th>Nazwa</th>
+		<th>Materiał</th>
+	</tr>
+	<% @elements.each do |element| %>
+	<tr>
+		<td><%= element.name%></td>
+		<td><%= link_to element.material.brand, material_colors_path(element.material) %> </td>
+	</tr>
+	<% end %>
+</table>
+<%= link_to 'Nowy element', new_product_element_path %>
+</br>
+<%= link_to "Cofnij", products_path %>

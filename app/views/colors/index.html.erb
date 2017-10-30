@@ -1,0 +1,18 @@
+<%= flash[:notice] if flash[:notice] %>
+<table class="table" border="1">
+<h3>Tabela dostępnych kolorów</h3>
+<h4><%= @material.brand %></h4>
+	<tr>
+		<th>Kolor</th>
+		<th>Zdjęcie</th>
+	</tr>
+	<% @colors.each do |color| %>
+	<tr>
+		<td><%= color.color%></td>
+		<td><%= image_tag color.picture %></td>
+	</tr>
+	<% end %>
+</table>
+<%= link_to 'Nowy kolor', new_material_color_path%>
+<br />
+<%= link_to "Cofnij", materials_path %>

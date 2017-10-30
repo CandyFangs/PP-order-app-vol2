@@ -1,0 +1,12 @@
+<%= "#{@product.model}" %>
+</br>
+<%= "#{@product.description}" %>
+</br>
+<%= "Cena: #{@product.price}zł" %>
+</br>
+<%= form_for(@order, html: {class: "form-horizontal"}) do |f| %>
+	<%= f.hidden_field :product_id, value: @product.id %>
+	<div class="form-group">
+		<%= f.submit "Choose your colors" %>
+	</div>
+<% end %>

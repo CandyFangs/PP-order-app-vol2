@@ -1,0 +1,16 @@
+<%= flash[:notice] if flash[:notice] %>
+<table class="table" border="1">
+	<tr>
+		<th>Rodzaj materiału</th>
+		<th>Szczegóły</th>
+	</tr>
+	<% @materials.each do |material| %>
+	<tr>
+		<td><%= material.brand %></td>
+		<td><%= link_to 'Pokaż', material_colors_path(material) %></td>
+	</tr>
+	<% end %>
+</table>
+<%= link_to 'Nowy materiał', new_material_path%>
+<br />
+<%= link_to "Cofnij", root_path %>

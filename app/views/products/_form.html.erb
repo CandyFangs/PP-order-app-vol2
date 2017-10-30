@@ -1,0 +1,25 @@
+	<%= form_for(@product, html: {class: "form-horizontal"}) do |f| %>
+		<div class="form-group">
+			<%= f.label :category_id, "Typ", class: "control-label" %>
+			<%= f.collection_select :category_id, Category.all, :id, :name, class: "form-control col-sm-4" %>
+		</div>
+		<div class="form-group">
+			<%= f.label :model, "Model", class: "control-label" %>
+			<%= f.text_field :model, class: "form-control col-sm-4" %>
+		</div>
+		<div class="form-group">
+			<%= f.label :description, "Opis", class: "control-label"  %>
+			<%= f.text_area :description, class: "form-control col-sm-4" %>
+		</div>
+		<div class="form-group">
+			<%= f.label :price, "Cena(zł)", class: "control-label"  %>
+			<%= f.text_field :price, class: "form-control col-sm-4" %>
+		</div>
+		<div class="form-group">
+			<%= f.label :picture, "Zdjęcie", class: "control-label"  %>
+			<%= f.file_field :picture, class: "form-control col-sm-4" %>
+		</div>
+	<br />
+	<%= f.submit "Zapisz" %>
+</br> 
+<% end %>
